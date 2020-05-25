@@ -35,12 +35,12 @@ public interface QueryRecordService {
 	 */
 	public Result<List<RecordTable>> queryOtherPage(QueryRecord qr);
 
-	/**
-	 * 下载excel表格
-	 * 
-	 * @param qr			检索信息
-	 * @return
-	 */
-	public HSSFWorkbook download(QueryRecord qr);
+//	/**
+//	 * 下载excel表格
+//	 *
+//	 * @param qr			检索信息
+//	 * @return
+//	 */
+//	public HSSFWorkbook download(QueryRecord qr);
 
 }

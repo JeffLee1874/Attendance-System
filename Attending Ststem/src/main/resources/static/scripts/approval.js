@@ -89,6 +89,7 @@ function submitBtn(){
 	var end=$("#end").val();
 	var leaveNum=$("#leaveNum").val();
 	var leaveRegard=$("#leaveRegard").val();
+//	var approver=$("#approver").val();
 	var approver=$(".ulList").find("li").text();
 	var numReg=/^[0-9]*$/;
 	if(!numReg.test(leaveNum)){
@@ -110,7 +111,17 @@ function submitBtn(){
 				alert("提交失败");
 			}
 		});
-	}else{
+	}else if(approver==""){
 		alert("审批人不能为空");
-	}
+	}else if(leaveType==""){
+     	alert("请假类型不能为空");
+    }else if(start==""){
+        alert("开始时间不能为空");
+    }else if(leaveNum==""){
+        alert("请假天数不能为空");
+    }else if(end==""){
+        alert("结束时间不能为空");
+    }else if(leaveRegard==""){
+        alert("请假事由不能为空");
+    }
 }

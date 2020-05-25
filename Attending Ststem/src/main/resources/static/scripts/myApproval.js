@@ -149,14 +149,8 @@ function pendingApproval(){
 				
 			}
 		});
-	}else{
-			delTr("#pendingApproval");
-			$("#countRed").text("");
-			console.log("记录为0");
-			layer.msg("对不起，没有该记录");
 	}
-}
-//
+
 function paging(page,approverStatue){
 	$.ajax({
 		url:"approval/getPendingApproval.io",

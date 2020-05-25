@@ -84,19 +84,3 @@ $(document).ready(function() {
         var url = link2.href.replace(/^data:image\/[^;]/, 'data:application/octet-stream');
 	});
 })
-
-function initData(){
-	var data;
-	$.ajax({
-		url:"chart/getChartData.io",
-		type:"get",
-		async:false,
-		success:function(result){
-			data=result.data;
-		},
-		error:function(){
-			alert("初始化数据失败");
-		}
-	});
-	return data;
-}

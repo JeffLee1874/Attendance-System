@@ -65,6 +65,7 @@ public class UpLoadServiceImpl implements UpLoadService {
 
 		// 从数据库获取，该权限
 		List<String> list = resourcesDao.queryResourceName(userId);
+		//如果没有权限的情况
 		if (list == null || list.size() < 1 || !list.contains("/dataImport")) {
 			req.getSession().setAttribute("state", -1);
 			res.sendRedirect("../index");
@@ -76,8 +77,8 @@ public class UpLoadServiceImpl implements UpLoadService {
 		String name = file.getOriginalFilename();
 		String fileName = savePath + name;
 		File fileSave=new File(fileName);
-		String dateS=req.getParameter("dateS").replace('-', '/');
-		String dateE=req.getParameter("dateE").replace('-', '/');
+		String dateS=req.getParameter("dateS").replace('-', '/');     //开始时间
+		String dateE=req.getParameter("dateE").replace('-', '/');     //结束时间
 		String fileExtName = name.substring(name.lastIndexOf(".") + 1);
 		if(null!=dateS && null!=dateE && !"".equals(dateS) && !"".equals(dateE) && (fileExtName.equals("xlsx") || fileExtName.equals("xltx"))) {
 			file.transferTo(fileSave);
@@ -106,6 +107,7 @@ public class UpLoadServiceImpl implements UpLoadService {
 
 	/**
 	 * 插入考勤记录到数据库
+	 * 这个数据表格的顺序和数据库的元素的顺序必须是一样的
 	 */
 	private void insertAttendRecord(String realfileName, String dateS, String dateE) throws ParseException {
 		try {
@@ -115,6 +117,8 @@ public class UpLoadServiceImpl implements UpLoadService {
 			List<AttendTable> enter = new ArrayList<AttendTable>();
 			// 用于存储出门信息
 			List<AttendTable> out = new ArrayList<AttendTable>();
+
+			//出勤表
 			AttendTable record;
 			// 获取到工作薄
 			XSSFWorkbook workbook = new XSSFWorkbook(realfileName);

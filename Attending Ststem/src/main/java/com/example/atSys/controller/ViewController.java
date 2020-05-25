@@ -36,17 +36,11 @@ public class ViewController {
 		return "record";
 	}
 	
-//	@ApiOperation(value = "考勤管理页面")
-//	@GetMapping(value="/attend")
-//	public String attend() {
-//		return "attend";
-//	}
-	
-//	@ApiOperation(value = "公告通知页面")
-//	@GetMapping(value="/notice")
-//	public String notice() {
-//		return "notice";
-//	}
+	@ApiOperation(value = "考勤管理页面")
+	@GetMapping(value="/attend")
+	public String attend() {
+		return "attend";
+	}
 	
 	@ApiOperation(value = "数据导入页面")
 	@GetMapping(value="/dataImport")
@@ -90,12 +84,6 @@ public class ViewController {
 		return "info";
 	}
 	
-//	@ApiOperation(value = "公告编辑页面")
-//	@GetMapping(value="/editeNotice")
-//	public String editeNotice() {
-//		return "editeNotice";
-//	}
-	
 	@ApiOperation(value = "异常页面")
 	@GetMapping(value="/error")
 	public String fail() {
@@ -108,41 +96,18 @@ public class ViewController {
 		return "404";
 	}
 	
-//	@ApiOperation(value = "公告详情页面")
-//	@GetMapping(value = "/noticeOperation")
-//	public String noticeOperation() {
-//		return "noticeOperation";
-//	}
-	
-	@ApiOperation(value = "修改公告页面")
-	@GetMapping(value = "/upNotice")
-	public String upNotice() {
-		return "upNotice";
-	}
-	
 	@ApiOperation(value = "添加部门")
 	@GetMapping(value = "/addDept")
 	public String addDept() {
 		return "addDept";
 	}
 	
-//	@ApiOperation(value = "资料文件上传")
-//	@GetMapping(value = "/dataUpload")
-//	public String dataUpload() {
-//		return "dataUpload";
-//	}
-//
-//	@ApiOperation(value = "资料详情")
-//	@GetMapping(value = "/dataDetails")
-//	public String dataDetails() {
-//		return "dataDetails";
-//	}
-	
-//	@ApiOperation(value = "文档管理")
-//	@GetMapping(value = "/docMangage")
-//	public String docMangage() {
-//		return "docMangage";
-//	}
+	@ApiOperation(value = "资料文件上传")
+	@GetMapping(value = "/dataUpload")
+	public String dataUpload() {
+		return "dataUpload";
+	}
+
 	@ApiOperation(value = "添加员工")
 	@GetMapping(value = "/addEmp")
 	public String addEmp() {

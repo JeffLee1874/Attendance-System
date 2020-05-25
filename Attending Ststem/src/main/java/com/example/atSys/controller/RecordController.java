@@ -45,6 +45,8 @@ public class RecordController {
 		return queryRecordService.queryDetailedInfo(qr);
 	}
 
+
+
 	@ApiOperation(value = "查询符合查询条件的记录总数")
 	@GetMapping(value="/queryCount.io")
 	@ResponseBody
@@ -76,22 +78,5 @@ public class RecordController {
 		qr.setPage(page);
 		return queryRecordService.queryOtherPage(qr);
 	}
-	
-	@ApiOperation(value = "导出考勤记录")
-	@GetMapping(value="/downloadExcel.io")
-	public void downloadExcel(HttpServletRequest req,HttpServletResponse res) throws Exception{
-		
-			QueryRecord qr=new QueryRecord();
-			qr.setEmpName(req.getParameter("name"));
-			qr.setEmpDept(req.getParameter("dept"));
-			qr.setEnd(req.getParameter("end"));
-			qr.setStart(req.getParameter("start"));
-			HSSFWorkbook wb=queryRecordService.download(qr);
-	        res.setContentType("application/vnd.ms-excel");
-	        res.setHeader("Content-disposition", "attachment;filename="+new String("考勤记录表".getBytes(),"iso-8859-1")+".xls" );
-	        OutputStream ouputStream = res.getOutputStream();
-	        wb.write(ouputStream);
-	        ouputStream.flush();
-	        ouputStream.close();
-	}
+
 }

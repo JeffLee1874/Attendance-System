@@ -2,8 +2,7 @@
 					$(".com").load("com");
 					// 检索信息
 					$("#search_info").click(searchInfo);
-					// 数据导出
-					$("#dataImport").click(dataImport);
+
 					// 绑定双击事件
 					$("#tt")
 							.datagrid(
@@ -141,24 +140,7 @@ function createTr(name, dept, time, hours, late, overTime, early) {
 		});
 	}
 }
-/*
- * 数据导出
- */
-function dataImport() {
-	var data = "";
-	var DATA = "";
-	var name = $("#name").val();
-	var dept = $("#dept").combobox("getText");
-	// 需要转化日期格式且转换为Date对象
-	var start = calecon($("#start").val().trim());
-	var end = calecon($("#end").val().trim());
-	if (dept != "" && $("#start").val().trim() != ""
-		&& $("#end").val().trim() != "" && end >= start){
-		
-		location.href ="attend/downloadExcel.io?name=" + name
-		+ "&dept=" + dept + "&start=" + start + "&end=" + end;
-	}
-}
+
 // 创建tr
 function create(dates, morn, noon, after, nigth) {
 	var tr = "<tr>";

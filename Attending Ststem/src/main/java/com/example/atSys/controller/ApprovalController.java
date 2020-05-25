@@ -34,26 +34,17 @@ public class ApprovalController {
 	@ApiOperation(value = "查询审批人")
 	@GetMapping(value = "/approval.io")
 	@ResponseBody
-	public Result<String> queryApprovalInfo(
+	public Result<List<EmpInfo>> queryApprovalInfo(
 			@ApiParam(value = "当前页数", required = true) @RequestParam(value = "page") int page,
 			@ApiParam(value = "每页多少条", required = true) @RequestParam(value = "limit") int limit) {
-		test = new Result<>();
-		test.setState(1);
-		test.setMsg("damn it");
-		test.setCount(9000);
-		test.setData("1909-09-01");
-		return test;
+		return mangageService.queryApprovalInfo(page, limit);
 	}
+
+
 	@GetMapping("/fucker")
 	public String hello(@RequestParam(value = "fuck", defaultValue = "shit") String name){
 		return "fuck" + name;
 	}
-//	public Result<List<EmpInfo>> queryApprovalInfo(
-//			@ApiParam(value = "当前页数", required = true) @RequestParam(value = "page") int page,
-//			@ApiParam(value = "每页多少条", required = true) @RequestParam(value = "limit") int limit) {
-//		return mangageService.queryApprovalInfo(page, limit);
-//
-//	}
 
 	@ApiOperation(value = "请假申请")
 	@PostMapping(value = "/leaveApplication.io")
