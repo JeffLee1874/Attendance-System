@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+import com.example.atSys.entity.UserResoure;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.session.Session;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -132,15 +133,6 @@ public class ApprovalServiceImpl implements ApprovalService{
 	}
 	@Override
 	public Result<Object> operation(String id, int approverStatue) {
-//		Session session = SecurityUtils.getSubject().getSession();
-//		String userId=(String)session.getAttribute("userSessionId");
-//		UserResoure ur=authorityDao.getUserResoure(userId,"4");
-//
-//		if(ur==null) {
-//			result.setMsg("没有该权限");
-//			result.setState(2);
-//			return result;
-//		}
 		Result<Object> result=new Result<Object>();
 		Map<String,Object> map=new HashMap<String,Object>();
 		map.put("id", id);

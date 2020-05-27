@@ -7,52 +7,24 @@ import com.example.atSys.utils.Result;
 
 public interface DeptService {
 	
-	/**
-	 * 添加部门
-	 * 
-	 * @param deptName		部门名称
-	 * @param remark		备注内容
-	 * @return
-	 */
+	// 添加部门
 	public Result<Object> addDept(DeptInfo dept);
 
-	/**
-	 * 删除部门 
-	 * @param id			部门id
-	 * @return
-	 */
+	// 删除部门
 	public Result<Object> delDept(String id);
 
-	/**
-	 * 查询部门信息
-	 * @param  				当前页数
-	 * @return
-	 */
+	//查询部门信息
 	public Result<List<DeptInfo>> queryDept(int page);
 
-	/**
-	 * 修改部门信息
-	 * @param dept			部门信息
-	 * @return
-	 */
+	//修改部门信息
 	public Result<Object> upDept(DeptInfo dept);
 	
-	/**
-	 * 部门总数
-	 * @return
-	 */
+	//部门总数
 	public Result<Object> queryCount();
 	
-	/**
-	 * 部门信息
-	 * @return
-	 */
+	//部门信息
 	public Result<List<DeptInfo>> queryDeptInfo();
 	
-	/**
-	 * 获取需要修改的部门信息
-	 * @param id
-	 * @return
-	 */
+	//获取需要修改的部门信息
 	public Result<DeptInfo> getDeptInfoById(String id);
 }

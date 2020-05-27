@@ -7,47 +7,19 @@ import com.example.atSys.utils.Result;
 
 public interface AuthorityService {
 
-    /**
-     * 查询员工信息
-     *
-     * @param page			当前页面
-     * @param value         搜索值
-     * @param statue		搜索状态
-     * @return
-     */
+    //查询员工信息
     public Result<List<EmpInfo>> queryEmpInfo(Integer page,String value,Integer statue);
 
-    /**
-     * 查询员工总数
-     * @param value         搜索值
-     * @param statue		搜索状态
-     * @return
-     */
+    //查询员工总数
     public Result<Object> queryCount(String value,Integer statue);
 
-    /**
-     * 添加权限
-     *
-     * @param resourceId	资源id
-     * @param empId			员工id
-     * @return
-     */
+    //添加权限
     public Result<Object> addAuthority(Integer[] resourceId, String empId);
 
-    /**
-     * 查询权限
-     *
-     * @param empId			员工id
-     * @return
-     */
+    // 查询权限
     public Result<List<Integer>> queryAuthorityId(String empId);
 
-    /**
-     * 查询是否拥有该权限url
-     *
-     * @param url			权限url
-     * @return
-     */
+    //查询是否拥有该权限url
     public Result<Object> authorityUrl(String url);
 
 }

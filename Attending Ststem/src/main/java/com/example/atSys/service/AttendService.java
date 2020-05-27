@@ -10,16 +10,9 @@ import com.example.atSys.utils.Result;
 
 public interface AttendService
 {
-	/**
-	 * 查询公式统计表
-	 * 
-	 * @param 	qr		检索考勤记录信息
-	 * @return
-	 */
+	//查询公式统计表
 	public Result<List<ResultProce>> statistic(QueryRecord qr);
 	
-	/**
-	 * 导出工时统计
-	 */
+	//导出工时统计
 	public HSSFWorkbook download(QueryRecord qr) throws Exception;
 }

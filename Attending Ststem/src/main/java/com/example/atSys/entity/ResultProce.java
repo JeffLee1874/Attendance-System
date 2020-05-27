@@ -1,11 +1,6 @@
 package com.example.atSys.entity;
 
-/**
- * 用于储存返回的数据处理结果
- * 
- * @author acer-yu
- *
- */
+//用于储存返回的数据处理结果
 public class ResultProce {
 	private String empName;
 	private String dept;

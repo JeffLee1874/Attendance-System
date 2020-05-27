@@ -1,11 +1,7 @@
 package com.example.atSys.entity;
 
-/**
- * 数据处理表
- * 
- * @author acer-yu
- *
- */
+//数据处理表
+
 public class DataProceTable {
 	private String empName;
 	private String dept;

@@ -38,9 +38,7 @@ public class AttendServiceImpl implements AttendService {
 	private String[] dbHead = { "姓名", "部门", "小时数", "迟到", "早退", "加班", "日期", "星期" };
 	private String[] rtHead = { "姓名", "日期", "早上上班", "中午下班", "下午上班", "晚上下班", "部门" };
 
-	/**
-	 * 查询工时统计表
-	 */
+	//查询工时统计表
 	public Result<List<ResultProce>> statistic(QueryRecord qr) {
 		Result<List<ResultProce>> result = new Result<List<ResultProce>>();
 		List<DataProceTable> list = new ArrayList<DataProceTable>();
@@ -65,9 +63,7 @@ public class AttendServiceImpl implements AttendService {
 		return result;
 	}
 
-	/**
-	 * 处理员工工时统计表
-	 */
+	// 处理员工工时统计表
 	private List<ResultProce> proce(List<DataProceTable> list) {
 		List<ResultProce> rpList = new ArrayList<ResultProce>();
 		ResultProce rp;
@@ -108,11 +104,7 @@ public class AttendServiceImpl implements AttendService {
 		return rpList;
 	}
 
-	/**
-	 * 导出工时统计
-	 * 
-	 * @throws Exception
-	 */
+	// 导出工时统计
 	@Override
 	public HSSFWorkbook download(QueryRecord qr) throws Exception {
 		List<DataProceTable> rpList = new ArrayList<DataProceTable>();

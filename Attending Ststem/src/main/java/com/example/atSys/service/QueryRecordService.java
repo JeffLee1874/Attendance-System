@@ -11,36 +11,13 @@ import com.example.atSys.utils.Result;
 public interface QueryRecordService {
 
 
-	/**
-	 * 查询迟到早退加班明细
-	 * 
-	 * @param qr			检索信息
-	 * @return
-	 */
+	//查询迟到早退加班明细
 	public Result<List<RecordTable>> queryDetailedInfo(QueryRecord qr);
 
-	/**
-	 * 查询记录总数
-	 * 
-	 * @param qr			检索信息
-	 * @return
-	 */
+	//查询记录总数
 	public Result<Object> quertCount(QueryRecord qr);
 
-	/**
-	 * 获取分页记录 			检索信息
-	 * 
-	 * @param qr
-	 * @return
-	 */
+	// 获取分页记录 			检索信息
 	public Result<List<RecordTable>> queryOtherPage(QueryRecord qr);
-
-//	/**
-//	 * 下载excel表格
-//	 *
-//	 * @param qr			检索信息
-//	 * @return
-//	 */
-//	public HSSFWorkbook download(QueryRecord qr);
 
 }

@@ -7,13 +7,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 public interface UpLoadService {
 	
-	/**
-	 * 上传excel文件
-	 * 
-	 * @param req
-	 * @param res
-	 * @throws Exception
-	 */
+	//上传excel文件
 	public void upLoad(MultipartFile file,HttpServletRequest req, HttpServletResponse res) throws Exception;
 
 }

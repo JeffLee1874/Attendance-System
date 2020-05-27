@@ -7,47 +7,22 @@ import com.example.atSys.entity.DeptInfo;
 
 public interface DeptDao {
 	
-	/**
-	 * 添加部门
-	 * 
-	 * @param map		部门信息
-	 * @return
-	 */
+	//添加部门
 	public int addDept(DeptInfo dept);
 
-	/**
-	 * 删除部门
-	 * 
-	 * @param id		部门id
-	 * @return
-	 */
+	//删除部门
 	public int delDept(String id);
 
-	/**
-	 * 查询部门信息
-	 * 
-	 * @return
-	 */
+	//查询部门信息
 	public List<DeptInfo> queryDept(Map<String,Object> map);
 
-	/**
-	 * 修改部门信息
-	 * 
-	 * @param dept
-	 * @return
-	 */
+	//修改部门信息
 	public int upDept(DeptInfo dept);
 	
-	/**
-	 * 部门总数
-	 * @return
-	 */
+	//部门总数
 	public int queryCount();
 	
-	/**
-	 * 部门信息
-	 * @return
-	 */
+	//部门信息
 	public List<DeptInfo> queryDeptInfo();
 	
 	public DeptInfo getDeptInfoById(String id);

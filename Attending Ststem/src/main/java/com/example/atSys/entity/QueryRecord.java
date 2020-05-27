@@ -1,11 +1,6 @@
 package com.example.atSys.entity;
 
-/**
- * 检索考勤记录的条件实体类
- * 
- * @author acer-yu
- *
- */
+// 检索考勤记录的条件实体类
 public class QueryRecord {
 
 	private String empName;
