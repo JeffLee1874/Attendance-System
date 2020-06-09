@@ -160,16 +160,16 @@ public class MangageServiceImpl implements MangageService {
 		Result<Object> result=new Result<Object>();
 		Map<String,Object> map=new HashMap<String,Object>();
 		EmpInfo user=(EmpInfo)SecurityUtils.getSubject().getSession().getAttribute("userSession");
-//		map.put("empId",user.getEmpId());
-//		map.put("empPass", Utils.Md5(user.getEmpName(), newPass));
-//		if(!user.getEmpPass().equals(Utils.Md5(user.getEmpName(), oriPass))) {
-//			result.setMsg("原密码错误");
-//			result.setState(0);
-//		}else {
-//			mangageDao.updatePass(map);
-//			result.setMsg("密码修改成功");
-//			result.setState(1);
-//		}
+		map.put("empId",user.getEmpId());
+		map.put("empPass", Utils.Md5(user.getEmpName(), newPass));
+		if(!user.getEmpPass().equals(Utils.Md5(user.getEmpName(), oriPass))) {
+			result.setMsg("原密码错误");
+			result.setState(0);
+		}else {
+			mangageDao.updatePass(map);
+			result.setMsg("密码修改成功");
+			result.setState(1);
+		}
 		return result;
 	}
 
@@ -197,7 +197,6 @@ public class MangageServiceImpl implements MangageService {
 		Result<Object> result=new Result<Object>();
 		EmpInfo empInfo=mangageDao.getNum(empId);
 		map.put("empId", empId);
-//		map.put("empPass", Utils.Md5(empInfo.getEmpName(), empInfo.getEmpNum()));
 		int n=mangageDao.passwordReset(map);
 		if(n>0) {
 			result.setMsg("密码重置成功");
