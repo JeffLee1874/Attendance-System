@@ -1,0 +1,221 @@
+body{
+    font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+    background:#3d3d3d;
+    /* text-align: center; */
+    color:white;
+}
+
+.pre_list li{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+.studio{
+    font-size: 18px;
+}
+
+.title{
+    font-size: 14px;
+}
+
+.right{
+    float: right;
+    margin-right: 1.5%;
+}
+.right-{
+    float: right;
+}
+
+.center{
+    margin-left: 50%;
+}
+
+.left-{
+    margin-left: 0.5%;
+}
+
+.welcome{
+    font-size: 14px;
+}
+
+.svg{
+    vertical-align: middle;
+}
+
+.global{
+    float: right;
+    margin-right: 5%;
+    margin-top: 100px;
+}
+
+
+.slide {
+    float: left;
+    position: relative;
+    margin: auto;
+    width: 1080px;
+    height: 400px;
+    text-align: center;
+    font-family: Arial;
+    color: #FFF;
+    overflow: hidden;
+    margin-left: 2%;
+}
+
+.slide ul {
+    margin: 10px 0;
+    padding: 0;
+    width: calc(1080px * 3);
+    transition: all 0.5s;
+}
+
+.slide li {
+    float: left;
+    width: 1080px;
+    height: 400px;
+    list-style: none;
+    line-height: 350px;
+    font-size: 36px;
+    vertical-align: middle;
+}
+
+.slide li:nth-child(1) {
+    background: #9fa8ef;
+}
+
+.slide li:nth-child(2) {
+    background: #ef9fb1;
+}
+
+.slide li:nth-child(3) {
+    background: #9fefc3;
+}
+
+.slide input[name="sildeInput"] {
+    display: none;
+}
+
+.slide label[for^="sildeInput"] {
+    position: absolute;
+    bottom: 20px;
+    width: 6px;
+    height: 6px;
+    margin: 0 47%;
+    line-height: 2px;
+    color: #FFF;
+    background: rgb(0, 0, 0);
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.slide label[for="sildeInput1"] {
+    left: 0;
+}
+
+.slide label[for="sildeInput2"] {
+    left: 15px;
+}
+
+.slide label[for="sildeInput3"] {
+    left: 30px;
+}
+
+#sildeInput1:checked~ul {
+    margin-left: 0;
+}
+
+#sildeInput2:checked~ul {
+    margin-left: -1080px;
+}
+
+#sildeInput3:checked~ul {
+    margin-left: -2160px;
+}
+
+#sildeInput1:checked~label[for="sildeInput1"] {
+    color: #000;
+    background: #fff;
+  }
+
+#sildeInput2:checked~label[for="sildeInput2"] {
+    color: #000;
+    background: #fff;
+}
+
+#sildeInput3:checked~label[for="sildeInput3"] {
+    color: #000;
+    background: #fff;
+}
+
+
+.submit {
+    background-color: #ceae56;
+    border: none;
+    color: white;
+    padding: 9px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    margin: 16px 1px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.input_text{
+    background-color: transparent;
+    border-color: #ffffff;
+    border-style: solid;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 1px;
+    border-left-width: 0px;
+    outline: none;
+    color: white;
+}
+
+.input_text:focus{
+    background-color:transparent;
+}
+
+.input_text:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #3d3d3d inset !important;
+    -webkit-text-fill-color: #ffffff;
+}
+
+.letter{
+    font-size: small;
+}
+
+.end{
+    height: 300px;
+    background-color: rgb(87, 87, 87);
+    margin-top: 36%;
+}
+
+.elements{
+    width: max-content;
+    height: 100px;
+    float: left;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.end li{
+    font-size: smaller;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.h{
+    font-size: large;
+    text-align: center;
+    font-weight: 800;
+}
+
+.end_{
+    margin-top: -20px;
+    height: 50px;
+    background-color: rgb(87, 87, 87);
+}

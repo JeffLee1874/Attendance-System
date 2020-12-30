@@ -21,6 +21,5 @@ function queryDept(){
 	});
 }
 function createS(data){
-	
 	$("#dept").combobox("loadData", data);
 }

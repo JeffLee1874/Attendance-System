@@ -1,13 +1,13 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>-->
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
 <head>
 <meta name="viewport"
 	content="width = device-width, initial-scale = 1.0, user-scalable = 1" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" href="layui/css/layui.css" />
+<!--<link rel="stylesheet" href="layui/css/layui.css" />-->
 <link rel="stylesheet" href="styles/login.css" />
-<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+<!--<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />-->
 <script src="scripts/jquery.min.js"></script>
 <script type="text/javascript" src="scripts/login.js"></script>
 <script type="text/javascript" src="scripts/path.js"></script>
@@ -15,45 +15,166 @@
 <script src="layui/layui.js"></script>
 </head>
 <body>
-	<p style="font-size: 29px;">考勤系统</p>
+<ul class="pre_list">
+	<li>
+		<div class="svg">
+			<svg t="1606110039890" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2387" width="28" height="28"><path d="M957.44 844.8 665.6 954.88 665.6 71.68 957.44 179.2C998.4 194.56 1024 232.96 1024 276.48l0 471.04C1024 791.04 998.4 829.44 957.44 844.8z" p-id="2388" fill="#7cba59"></path><path d="M460.8 563.2l0 371.2 153.6 38.4L614.4 51.2 76.8 184.32c-46.08 10.24-76.8 51.2-76.8 99.84l0 455.68c0 46.08 30.72 87.04 76.8 99.84l179.2 43.52L256 563.2 460.8 563.2z" p-id="2389" fill="#f8d266"></path></svg>
+		</div>
+	</li>
+	<li class="left-">
+		<div class="studio">
+			Axel Studio
+		</div>
+	</li>
+
+	<li class="right">
+		<div class="svg">
+			<svg t="1606110218142" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3083" width="20" height="20"><path d="M813.875698 496.390342c52.50047-41.089244 86.340796-104.976858 86.340796-176.66328 0-123.681154-100.609846-224.297021-224.297021-224.297021-25.808717 0-46.724616 20.923926-46.724616 46.732643 0 25.808717 20.915898 46.732643 46.724616 46.732643 72.148009 0 130.849796 58.69376 130.849796 130.833741 0 72.141988-58.69978 130.833741-130.849796 130.833741-25.808717 0-46.724616 20.923926-46.724616 46.732643 0 2.958169 0.305049 5.840075 0.830856 8.64572-0.525807 2.805644-0.830856 5.687551-0.830856 8.64572 0 25.808717 20.915898 46.732643 46.724616 46.732643 140.402634 0 254.629288 114.226654 254.629288 254.629288 0 25.808717 20.915898 46.732643 46.724616 46.732643 25.808717 0 46.724616-20.923926 46.724616-46.732643C1023.995986 672.999436 937.374224 549.918344 813.875698 496.390342z" p-id="3084" fill="#ffffff"></path><path d="M534.222389 504.110881c63.415992-45.187331 104.892568-119.26397 104.892568-202.891439C639.114958 163.899404 527.402948 52.179367 390.08291 52.179367S141.042835 163.899404 141.042835 301.219442c0 83.629476 41.478583 157.708122 104.898589 202.893446C101.9926 561.562371 0.004014 702.380433 0.004014 866.586892c0 25.808717 20.923926 46.732643 46.732643 46.732643 25.808717 0 46.732643-20.923926 46.732643-46.732643 0-163.558231 133.057385-296.623644 296.615616-296.623644 163.558231 0 296.631671 133.065412 296.631671 296.623644 0 25.808717 20.915898 46.732643 46.724616 46.732643 25.808717 0 46.724616-20.923926 46.724616-46.732643C780.161806 702.380433 678.177234 561.560364 534.222389 504.110881zM390.08291 145.642647c85.780872 0 155.584823 69.787896 155.584823 155.576795 0 85.788899-69.801944 155.576795-155.584823 155.576795-85.780872 0-155.576795-69.787896-155.576795-155.576795C234.506115 215.430542 304.302038 145.642647 390.08291 145.642647z" p-id="3085" fill="#ffffff"></path></svg>
+		</div>
+	</li>
+
+	<li class="right-">
+		<div class="welcome">
+			欢迎，
+		</div>
+	</li>
+
+	<li class="right">
+		<div class="title">
+			TTS Company 考勤与请假系统
+		</div>
+	</li>
+
+	<li class="right-">
+		<div class="svg">
+			<svg t="1606112225532" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10435" width="17" height="17"><path d="M773.76599999 849.7893333l1e-8 89.55799999-519.492-302.27799999 0-31.328 519.49199999-302.343 0 89.558-401.92899999 228.419 401.929 228.419z" p-id="10436" fill="#f8d266"></path></svg>
+		</div>
+	</li>
+
+</ul>
+
+<div class="big_box">
+
+	<div class="slide" style="margin-top: 80px;">
+
+		<input type="radio" name="sildeInput" value="0" id="sildeInput1" checked hidden />
+		<label for="sildeInput1"></label>
+
+		<input type="radio" name="sildeInput" value="1" id="sildeInput2" hidden />
+		<label for="sildeInput2"></label>
+
+		<input type="radio" name="sildeInput" value="1" id="sildeInput3" hidden />
+		<label for="sildeInput3"></label>
+
+
+		<ul>
+			<li>UPDATE-V4.13</li>
+			<li>TTS获得天使投资1.3亿</li>
+			<li>AI Cooking Robot is coming soon!</li>
+		</ul>
+	</div>
+
 	<div class="global" style="text-align: center;">
-		<form class="layui-form">
+		<form class="form" style="margin-top: 100px;">
 			<div class="log log_in" tabindex="-1" id="dl">
-				<dl style="margin-left: 30px;">
-					<dt>
-						<div class="header">
-							<h3>登&nbsp;录</h3>
-						</div>
-					</dt>
-					
+				<dl style="margin-left: 0px;">
+
 					<dt style="margin-bottom: 30px;">
 						<div class="letter">
-							用户名:&nbsp;<input type="text" name="username" id="count" tabindex="1">
+							用户名:&nbsp;<input type="text" name="username" id="count" tabindex="1" class="input_text">
 						</div>
 					</dt>
 					<dt style="margin-bottom: 30px;">
 						<div class="letter">
-							密&nbsp;&nbsp;&nbsp;码:&nbsp;<input type="password" name="pass" id="password" tabindex="2">
+							密&nbsp;&nbsp;&nbsp;码:&nbsp;<input type="password" name="pass" id="password" tabindex="2" class="input_text">
 						</div>
 					</dt>
 					<dt>
 						<div class="layui-form-item" pane="">
 							<div class="rebPass" style="display: inline-block;">
-								<label class="layui-form-label">记住密码</label>
+								<label class="letter">记住密码</label>
 							</div>
-							<div class="layui-input-block" style="display: inline-block;">
+							<div style="display: inline-block;">
 								<input type="checkbox" name="loginStatus" lay-skin="primary" class="loginStatus">
 							</div>
 						</div>
 					</dt>
 					<dt>
 						<div>
-							<input type="submit" name="" id="login" value="&nbsp;登&nbsp;录&nbsp;" tabindex="3" style="margin-top: 30px;border: none;font-size: 16px;">
+							<input type="submit" name="" id="login" value="&nbsp;登&nbsp;录&nbsp;" tabindex="3" class="submit">
 						</div>
 					</dt>
 				</dl>
 			</div>
 		</form>
 	</div>
+</div>
+
+<div class="end">
+	<div class="elements" style="margin-left: 2.5%;">
+		<div class="h">开发人员</div>
+		<ul>
+			<li>李济孚&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+			<li>李嘉浩</li>
+			<li>郭姿成</li>
+			<li>王子阳</li>
+		</ul>
+	</div>
+
+	<div class="elements" style="margin-left: 2.5%;">
+		<div class="h">项目地址</div>
+		<ul>
+			<li><a href="https://gitee.com/jefflee0934/attendance-system">Attendance System</a></li>
+		</ul>
+	</div>
+
+	<div class="elements" style="margin-left: 2.5%;">
+		<div class="h">公司</div>
+		<ul>
+			<li><a href="https://www.baidu.com">关于Alex Studio</a></li>
+			<li><a href="https://www.baidu.com">招贤纳士</a></li>
+			<li><a href="https://www.baidu.com">安全性</a></li>
+		</ul>
+	</div>
+
+</div>
+<div class="end_">
+	<ul class="pre_list">
+		<li>
+			<div class="svg">
+				<svg t="1606120825526" class="icon" viewBox="0 0 1027 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="12114" width="10" height="10"><path d="M512.275985 0.01003a511.699985 511.699985 0 0 0-63.962998 1019.36497 268.526992 268.526992 0 0 0 52.437998 4.61h17.863A511.699985 511.699985 0 0 0 512.275985 0.01003z m-80.673998 973.841971a469.057986 469.057986 0 0 1-388.383988-460.989986 451.193987 451.193987 0 0 1 10.371999-97.383997 49.555999 49.555999 0 0 0 79.520998-12.101c20.744999 12.677 48.979999 14.405 48.979999 39.759999 0 81.825998 0 169.413995 77.215997 172.870995a106.603997 106.603997 0 0 1 57.623999 63.386998c6.339 16.71 31.692999 0 57.623998 0 14.406 0 0 23.624999 0 74.909998S489.801986 882.230004 489.801986 882.230004a576.237983 576.237983 0 0 0 3.458 82.978998 172.870995 172.870995 0 0 0-61.657999 8.642999z m196.497995-7.489999c0-12.102-13.254-18.439999-32.269999-13.254 15.559-65.690998 23.049999-103.146997 57.623998-130.805996a43.793999 43.793999 0 0 0-29.963999-80.673998c-28.235999 4.61-10.373-34.573999-35.726999-36.878999s-57.623998-51.860998-93.926997-69.148998c-19.015999-8.643-37.454999-33.420999-66.843999-34.573999s-64.537998 22.472999-64.537998 4.61a1119.054967 1119.054967 0 0 0-6.914999-115.247996c0-13.253-8.644-4.61 26.506999-3.457 19.015999 0 9.796-38.607999 28.811999-40.336999s63.385998 17.863999 74.909998 9.796 74.911998 177.481995 74.911998 31.116999c0-17.286999-8.644-47.250999 0-63.961998a819.409976 819.409976 0 0 0 65.689998-124.467997 95.655997 95.655997 0 0 0-63.961998 0c-9.22 0 2.882 17.863999-10.372 20.745-50.132999 11.525-94.502997-13.254-78.943998-36.879999s73.181998-10.948 78.367998-57.622999c0-27.659999 5.186-57.623998 6.915-83.554997 67.419998 10.373 57.623998-87.587997-40.336999-97.959997A469.057986 469.057986 0 0 1 955.979972 359.006019a16.135 16.135 0 0 0-10.948-5.185999c-30.540999-76.062998-104.299997-20.744999-78.944997 45.522998-133.686996 103.145997-99.689997 172.870995-57.623999 216.089994a387.807989 387.807989 0 0 1 57.623999 77.214998c-15.558 45.522999 57.623998 27.082999 93.349997-50.132999a468.481986 468.481986 0 0 1-335.36999 324.421991z" p-id="12115" fill="#ffffff"></path></svg>
+			</div>
+		</li>
+		<li class="left-">
+			<div class="studio" style="font-size: 10px;">
+				TJU(中国)
+			</div>
+		</li>
+
+		<li class="right">
+			<div class="welcome"style="font-size: 10px;">
+				@Axel Studio 2020
+			</div>
+		</li>
+
+		<li class="right">
+			<div class="title"style="font-size: 10px;">
+				jefflee@gmail.com
+			</div>
+		</li>
+
+		<li class="right-">
+			<div class="svg">
+				<svg t="1606125110506" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="13064" width="15" height="15"><path d="M868.565333 213.333333H155.434667A27.264 27.264 0 0 0 128 240.469333v543.061334c0 15.018667 12.245333 27.136 27.434667 27.136h713.130666a27.264 27.264 0 0 0 27.434667-27.136V240.469333A27.264 27.264 0 0 0 868.565333 213.333333z m-34.261333 93.994667v442.24H189.696V307.328l-23.637333-18.218667 33.706666-42.837333 36.693334 28.245333H787.626667l36.693333-28.245333 33.664 42.837333-23.722667 18.218667z m-46.634667-32.896L512 486.528 236.373333 274.432l-36.693333-28.245333-33.706667 42.837333 23.637334 18.218667 292.821333 225.365333c17.322667 13.312 41.557333 13.312 58.88 0l292.992-225.28 23.637333-18.218667-33.706666-42.837333-36.565334 28.16z" fill="#F59223" p-id="13065"></path></svg>				</div>
+		</li>
+
+		<li class="right-">
+			<div class="title" style="margin-right: 10px; font-size: 10px;">
+				与Axel Studio联系
+			</div>
+		</li>
+
+	</ul>
+</div>
 
 </body></html>

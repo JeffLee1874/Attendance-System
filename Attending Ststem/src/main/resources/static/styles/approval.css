@@ -1,0 +1,279 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+@font-face {
+	font-weight: normal;
+	font-style: normal;
+	font-family: 'codropsicons';
+}
+
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+html{
+    overflow-y: scroll;
+}
+
+body {
+	background: #333;
+	font-family: 'Lato', Arial, sans-serif;
+	width: 100%;
+}
+h1{
+    color: #fff;
+    font-weight: 400;
+    font-size: 1em;
+}
+
+a, button {
+	outline: none;
+}
+
+a {
+	color: #f0f0f0;
+	text-decoration: none;
+}
+
+a:hover, a:focus {
+	color: rgb(255, 184, 30);
+}
+
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+.codrops-header {
+	margin: 0 auto;
+	padding: 2em;
+	text-align: center;
+}
+
+.codrops-header h1 {
+	margin: 0;
+	font-weight: 300;
+	font-size: 2.5em;
+	line-height: 1.3;
+}
+
+.codrops-header h1 span {
+	display: block;
+	padding: 0 0 0.6em 0.1em;
+	font-size: 60%;
+	opacity: 0.7;
+}
+
+/* To Navigation Style */
+.codrops-top {
+	width: 100%;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 0.69em;
+	line-height: 2.2;
+}
+
+.codrops-top a {
+	display: inline-block;
+	padding: 0 1em;
+	text-decoration: none;
+	letter-spacing: 1px;
+}
+
+.codrops-top span.right {
+	float: right;
+}
+
+.codrops-top span.right a {
+	display: block;
+	float: left;
+}
+
+
+
+.related {
+	text-align: center;
+	font-size: 1.5em;
+}
+
+.pre_list li{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+.studio{
+    font-size: 18px;
+}
+
+.title{
+    font-size: 14px;
+}
+
+.right{
+    float: right;
+    margin-right: 1.5%;
+}
+.right-{
+    float: right;
+}
+
+.center{
+    margin-left: 50%;
+}
+
+.left-{
+    margin-left: 0.5%;
+}
+
+.welcome{
+    font-size: 14px;
+}
+
+.layui-form-label{
+    width: fit-content;
+}
+
+.layui-input-block{
+    left: -4.5%;
+}
+
+.btn_bg {
+	top: 250%; width : 100%;
+	height: 65px;
+	background-color: #e4e4e4;
+	width: 100%;
+}
+
+.form_body{
+    background-color: white;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.sub_btn {
+	margin-left: 46%;
+	margin-top: 1%;
+}
+/* .bg1 {
+	width: 100%;
+	height: 2px;
+	top: 18%;
+
+} */
+.startTime{
+	top:22%;
+}
+/* .bg2{
+	width: 100%;
+	height: 2px;
+	top: 18%;
+} */
+.endTime{
+	top:34%;
+}
+/* .bg3{
+	width: 100%;
+	height: 2px;
+	top: 18%;
+} */
+.times{
+	top:46%;
+}
+/* .bg4{
+	width: 100%;
+	height: 2px;
+	top: 18%;
+} */
+.leaveExcuse{
+	width:40%;
+	top:58%;
+}
+.add{
+	left:1%;
+	top:75%;
+}
+.opacity_bg{
+	width:100%;
+	height:100%;
+	position:fixed;
+	top:0;
+	left:0;
+	background:#000;
+	opacity:0.6;
+	margin:auto;
+	z-index:9999999;
+	display:none;
+}
+.show{
+	position:absolute;
+	left:30%;
+	top:15%;
+	width:700px;
+	height:500px;
+	z-index:99999999;
+	background-color:#acd6ff;
+}
+.showBody{
+	position:absolute;
+	left:1%;
+	top:6%;
+	width:685px;
+	height:465px;
+	background-color:#fff;
+}
+#leftTitle{
+	position:absolute;
+	top:1%;
+	left:1%;
+	color:#fff;
+	font-weight:bold;
+	font-size:12px;
+}
+
+#btnClose{
+	position:absolute;
+	right: 0%;
+	height:20px;
+	padding:0px;
+}
+
+.layui-btn{
+		line-height:0px;
+}
+.layui-btn-sm{
+    color: white;
+    background-color: rgb(0, 78, 0);
+}
+
+.close{
+    color: white;
+    background-color: rgb(158, 0, 0);
+}
+.tab{
+	position:absolute;
+	width:610px;
+	height:450px;
+	left:6%;
+}
+.btnGroup{
+	position:absolute;
+	left:40%;
+	top:92%;
+}
+.ulList{
+	position:absolute;
+	top:90%;
+	left:15%;
+	width:880px;
+	height:40px;
+	overflow:hidden;
+}
+.ulList li{
+	display:inline;
+	font-size:13px;
+	background-color:#d7d7d7;
+}
+.ulList li img{
+	cursor:pointer;
+}

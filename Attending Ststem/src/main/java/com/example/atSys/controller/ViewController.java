@@ -25,9 +25,9 @@ public class ViewController {
 	}
 	
 	@ApiOperation(value = "员工管理页面")
-	@GetMapping(value="/stassMang")
-	public String mangage() {
-		return "mangage";
+	@GetMapping(value="/manage")
+	public String manage() {
+		return "manage";
 	}
 	
 	@ApiOperation(value = "考勤记录页面")
@@ -58,12 +58,6 @@ public class ViewController {
 	@GetMapping(value="/myApproval")
 	public String myApproval() {
 		return "myApproval";
-	}
-	
-	@ApiOperation(value = "公共模板页面")
-	@GetMapping(value="/com")
-	public String com() {
-		return "com";
 	}
 	
 	@ApiOperation(value = "部门管理页面")

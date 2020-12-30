@@ -5,6 +5,7 @@ var globalStatue=1;
 var phoneReg=/^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/;
 var emailReg=/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
 var numReg=/^[A-Za-z0-9]+$/;
+
 $(document).ready(function() {
 	layui.use(['form','layer'], function() {
 		form = layui.form;
@@ -26,11 +27,11 @@ $(document).ready(function() {
 	$(".del_sure").click(delSure);
 	//密码重置
 	$(".table_info").on("click",".reset",reset);
-	
+
 	queryDept();
 	//初始化员工数据
 	getInitInfo();
-	
+
 	$('.resetBtn').click(reload);
 	$(".body_content").mCustomScrollbar({
 		setWidth:1500,
@@ -43,12 +44,21 @@ $(document).ready(function() {
 		 scrollButtons:{
 		    enable:true,
 		 },
-		 advanced:{ 
+		 advanced:{
 		    updateOnContentResize:true,
 		}
-		
+
 	});
 })
+
+document.onkeydown = function(e) {
+	e = e || window.event;
+	if(e.keyCode == 13) {
+		doSearch(document.getElementById('name').value,"部门");
+    }
+}
+
+
 
 function reload(){
 	getInitInfo();
@@ -79,7 +89,7 @@ function getInitInfo(){
 			alert("查询出错");
 		}
 	});
-	
+
 	layui.use('laypage', function() {
 		var laypage = layui.laypage;
 		if(count>0){
@@ -124,15 +134,9 @@ function getAllEmp(page){
 	});
 }
 
-
-
-
-
-
-
 // 点击搜索
 function doSearch(value, name) {
-	
+    console.log(value + " " + name);
 	Gvalue=value;
 	globalStatue=2;
 	if(value==null || value==""){

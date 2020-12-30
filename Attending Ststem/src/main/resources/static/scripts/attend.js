@@ -1,8 +1,7 @@
-﻿$(document).ready(function() {
-					$(".com").load("com");
+﻿
+$(document).ready(function() {
 					// 检索信息
 					$("#search_info").click(searchInfo);
-
 					// 绑定双击事件
 					$("#tt")
 							.datagrid(
@@ -61,6 +60,12 @@
 						$(".layer").hide();
 						$(".opacity_bg").hide();
 					});
+					$(".easyui-textbox").next('span').children('.combo-text').first().css('background-color','white');
+					$(".easyui-textbox").textbox({
+                        iconCls:'icon-man',
+						iconAlign:'left',
+						color:"black"
+                    })
 					// 获取部门信息
 					queryDept();
 					// 限定日历不能选取今天之后的日期

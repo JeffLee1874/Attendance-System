@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+//import com.example.atSys.redis.RedisConfig;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
@@ -42,7 +43,6 @@ public class ShiroRealm extends AuthorizingRealm {
 	@Override
 	protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
 		String username = (String) SecurityUtils.getSubject().getPrincipal();
-//		String username = (String)principals.getPrimaryPrincipal();
 		Map<String, Object> map = new HashMap<String, Object>();
 		EmpInfo user = mangageDao.queryInfo(username);
 		map.put("userid", user.getEmpId());
@@ -97,7 +97,7 @@ public class ShiroRealm extends AuthorizingRealm {
 		if (user == null)
 			throw new UnknownAccountException();
 		SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(user.getEmpName(), // 用户名
-																										// 使用shiro:principal=""可以获取到改值SecurityUtils.getSubject().getPrincipal()可以获取到该值
+				// 使用shiro:principal=""可以获取到改值SecurityUtils.getSubject().getPrincipal()可以获取到该值
 				user.getEmpPass(), // 密码
 				ByteSource.Util.bytes(username), getName() // realm name
 		);
@@ -105,6 +105,8 @@ public class ShiroRealm extends AuthorizingRealm {
 		Session session = SecurityUtils.getSubject().getSession();
 		session.setAttribute("userSession", user);
 		session.setAttribute("userSessionId", user.getEmpId());
+
+		System.out.println("信息" + session.getId());
 		return authenticationInfo;
 	}
 

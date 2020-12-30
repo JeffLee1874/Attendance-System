@@ -1,12 +1,11 @@
 var form = "", layer = "", laydate = "", laypage = "";
 $(document).ready(function() {
-					$(".com").load("com.html");
 					$(".table_info").on("click",".adopt",agree)
 					$(".table_info").on("click",".refuse",refuse);
-					
-					
+
+
 					$(".table_info").on("click",".del",delApproval);
-					
+
 					$("#approvedSearch").click(approvedSearch);
 					$(".resetBtn").click(reload);
 
@@ -33,15 +32,15 @@ $(document).ready(function() {
 										pendingApproval();
 										//已审批
 										$("#approved").click(approval("","","",0,0));
-									
+
 									});
 				})
-				
+
 function reload(){
 	approval("","","",0,0);
 }
-				
-				
+
+
 //已审批搜索
 function approvedSearch(){
 	var applicant=$("#applicant").val().trim();
@@ -56,13 +55,13 @@ function approvedSearch(){
 	if(approverName=="通过"){
 		approverStatue=1;
 	}
-	
+
 
 	if(applicant!="" || createStartTime!="" || createEndTime!="" || approverName!="==请选择=="){
 		approval(applicant,createStartTime,createEndTime,approverStatue,1);
 	}else{
 		layer.msg("搜索条件不能为空");
-		
+
 	}
 }
 //已审批
@@ -94,9 +93,9 @@ function approval(applicant,createStartTime,createEndTime,approverStatue,statue)
 						+ "条，共"
 						+ (obj.count)
 						+ "条";
-				
+
 					$("#countRed1").text(str);
-				
+
 				delTr("#approval");
 				approvalPaging(obj.curr,applicant,createStartTime,createEndTime,approverStatue,statue);
 			}
@@ -104,11 +103,11 @@ function approval(applicant,createStartTime,createEndTime,approverStatue,statue)
 	}else{
 		//layer.msg("没有该结果数据，请从新查询");
 	}
-	
+
 }
-				
-				
-				
+
+
+
 //待审批
 function pendingApproval(){
 	var count = 0;
@@ -146,11 +145,17 @@ function pendingApproval(){
 						.text(str);
 				delTr("#pendingApproval");
 				paging(obj.curr,2);
-				
+
 			}
 		});
+	}else{
+			delTr("#pendingApproval");
+			$("#countRed").text("");
+			console.log("记录为0");
+			layer.msg("对不起，没有该记录");
 	}
-
+}
+//
 function paging(page,approverStatue){
 	$.ajax({
 		url:"approval/getPendingApproval.io",
@@ -175,7 +180,7 @@ function paging(page,approverStatue){
 function delApproval() {
 	var $tr=$(this).parent().parent();
 	var id=$tr.data("id");
-	
+
 	if(id!=""){
 		$.ajax({
 			url:"approval/delApproval.io",
@@ -270,9 +275,9 @@ function createTr(data,id,n) {
 	tr += '</th>';
 	tr += '</tr>';
 	var $tr=$(tr);
-	
+
 	$tr.data("id",data.id);
-	
+
 	$(""+id).append($tr);
 }
 

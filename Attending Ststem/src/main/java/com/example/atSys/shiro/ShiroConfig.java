@@ -4,6 +4,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import at.pollux.thymeleaf.shiro.dialect.ShiroDialect;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;
@@ -28,13 +29,13 @@ public class ShiroConfig {
 		return new LifecycleBeanPostProcessor();
 	}
 
-//	/**
-//	 * ShiroDialect，为了在thymeleaf里使用shiro的标签的bean
-//	 */
-//	@Bean
-//	public ShiroDialect shiroDialect() {
-//		return new ShiroDialect();
-//	}
+	/**
+	 * ShiroDialect，为了在thymeleaf里使用shiro的标签的bean
+	 */
+	@Bean
+	public ShiroDialect shiroDialect() {
+		return new ShiroDialect();
+	}
 
 	/**
 	 * ShiroFilterFactoryBean 处理拦截资源文件问题。 注意：单独一个ShiroFilterFactoryBean配置是或报错的，因为在
@@ -75,10 +76,10 @@ public class ShiroConfig {
 		filterChainDefinitionMap.put("/images/**", "anon");
 		filterChainDefinitionMap.put("/layui/**", "anon");
 		filterChainDefinitionMap.put("/scripts/**", "anon");
-		filterChainDefinitionMap.put("/static/styles/**", "anon");
-		// <!-- 过滤链定义，从上向下顺序执行，一般将 /**放在最为下边 -->:这是一个坑呢，一不小心代码就不好使了;
-		// <!-- authc:所有url都必须认证通过才可以访问; anon:所有url都都可以匿名访问-->
-		// 自定义加载权限资源关系
+		filterChainDefinitionMap.put("/styles/**", "anon");
+		// 过滤链定义
+		//  authc:所有url都必须认证通过才可以访问; anon:所有url都都可以匿名访问
+		// 加载权限资源关系
 		List<Resource> resourcesList = resourcesService.queryAll();
 		for (Resource resources : resourcesList) {
 
@@ -98,15 +99,15 @@ public class ShiroConfig {
 		DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
 		// 设置realm.
 		securityManager.setRealm(myShiroRealm());
-		// 自定义缓存实现 使用redis
 
 		return securityManager;
 	}
 
+
 	@Bean
 	public ShiroRealm myShiroRealm() {
 		ShiroRealm myShiroRealm = new ShiroRealm();
-//		myShiroRealm.setCredentialsMatcher(hashedCredentialsMatcher());    //加密算法
+//		myShiroRealm.setCredentialsMatcher(hashedCredentialsMatcher());
 		return myShiroRealm;
 	}
 
@@ -121,7 +122,7 @@ public class ShiroConfig {
 		HashedCredentialsMatcher hashedCredentialsMatcher = new HashedCredentialsMatcher();
 
 		hashedCredentialsMatcher.setHashAlgorithmName("md5");// 散列算法:这里使用MD5算法;
-		hashedCredentialsMatcher.setHashIterations(0);// 散列的次数，比如散列两次，相当于 md5(md5(""));
+		hashedCredentialsMatcher.setHashIterations(2);// 散列的次数，比如散列两次，相当于 md5(md5(""));
 
 		return hashedCredentialsMatcher;
 	}

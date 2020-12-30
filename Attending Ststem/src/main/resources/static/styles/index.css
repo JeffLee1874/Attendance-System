@@ -1,0 +1,40 @@
+body{
+    font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+    background:#3d3d3d;
+    /* text-align: center; */
+    color:white;
+}
+
+.pre_list li{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+.studio{
+    font-size: 18px;
+}
+
+.title{
+    font-size: 14px;
+}
+
+.right{
+    float: right;
+    margin-right: 1.5%;
+}
+.right-{
+    float: right;
+}
+
+.center{
+    margin-left: 50%;
+}
+
+.left-{
+    margin-left: 0.5%;
+}
+
+.welcome{
+    font-size: 14px;
+}

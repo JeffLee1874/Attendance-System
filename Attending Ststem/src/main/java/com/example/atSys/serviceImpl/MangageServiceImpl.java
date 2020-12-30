@@ -22,7 +22,7 @@ import com.example.atSys.dao.MangageDao;
 import com.example.atSys.entity.EmpInfo;
 import com.example.atSys.service.MangageService;
 import com.example.atSys.utils.Result;
-//import com.example.atSys.utils.Utils;
+import com.example.atSys.utils.Utils;
 
 @Service("mangageService")
 public class MangageServiceImpl implements MangageService {
@@ -166,7 +166,7 @@ public class MangageServiceImpl implements MangageService {
 			result.setMsg("原密码错误");
 			result.setState(0);
 		}else {
-			mangageDao.updatePass(map);
+//			mangageDao.updatePass(map);
 			result.setMsg("密码修改成功");
 			result.setState(1);
 		}

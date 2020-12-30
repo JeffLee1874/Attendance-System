@@ -1,77 +1,106 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-	xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+	  xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
 <head>
-<meta name="viewport"
-	content="width = device-width, initial-scale = 1.0, user-scalable = 0" />
-<meta charset="UTF-8" />
-<title>添加部门</title>
-<link rel="stylesheet" href="layui/css/layui.css" />
-<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
-<link rel="stylesheet" href="styles/addDept.css">
-<script type="text/javascript" src="scripts/jquery.min.js"></script>
-<script type="text/javascript" src="scripts/addDept.js"></script>
-<script src="layui/layui.js"></script>
+	<meta name="viewport"
+		  content="width = device-width, initial-scale = 1.0, user-scalable = 0"/>
+	<meta charset="UTF-8"/>
+	<title>添加部门</title>
+	<link rel="stylesheet" href="layui/css/layui.css"/>
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"/>
+	<link rel="stylesheet" href="styles/addDept.css">
+	<script type="text/javascript" src="scripts/jquery.min.js"></script>
+	<script type="text/javascript" src="scripts/addDept.js"></script>
+	<script src="layui/layui.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+
 </head>
 <body class="layui-layout-body">
-	<div class="com"></div>
-	<div class="body_layer">
-		<form class="layui-form form_content">
-
-			<table class="layui-table">
-				<tr>
-					<td style="width: 100px">部门名称</td>
-					<td><input type="text" name="title" required
-						lay-verify="required" autocomplete="off" class="layui-input deptName"></td>
-					<td style="width: 100px">部门主管</td>
-					<td><input type="text" name="title" required
-						lay-verify="required" autocomplete="off" class="layui-input director"></td>
-				</tr>
-				<tr>
-					<td style="width: 100px">部门地址</td>
-					<td><input type="text" name="title" required
-						lay-verify="required" autocomplete="off" class="layui-input address"></td>
-					<td style="width: 100px">部门电话</td>
-					<td><input type="text" name="title" required
-						lay-verify="required" autocomplete="off" class="layui-input phone"></td>
-				</tr>
-				<tr>
-					<td>部门备注</td>
-					<td colspan="3">
-						<div class="layui-form-item layui-form-text">
-							<div class="layui-input-block">
-								<textarea class="layui-textarea remark" lay-verify="required" required></textarea>
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td colspan="4">
-						<button class="layui-btn layui-btn-normal sub_btn" lay-submit="" lay-filter="demo1">立即提交</button>
-					</td>
-				</tr>
-			</table>
-			<!-- <label class="layui-form-label">部门名称</label>
-			<div class="layui-input-inline">
-				<input type="text" name="deptName" lay-verify="required"
-					placeholder="请输入" autocomplete="off" class="layui-input deptName" />
-			</div>
-			<br>
-			<br>
-			<div class="layui-form-item layui-form-text">
-				<label class="layui-form-label">备注内容</label>
-				<div class="layui-input-block">
-					<textarea placeholder="请输入内容" class="layui-textarea remark" lay-verify="required"></textarea>
-				</div>
-			</div>
-
-			<div class="layui-form-item">
-				<div class="layui-input-block">
-					<button class="layui-btn sub_btn" lay-submit="" lay-filter="demo1">立即提交</button>
-				</div>
-			</div> -->
-		</form>
+<div class="container" style="width: 100%;">
+	<div class="codrops-top clearfix">
+		<a href="index"><span>HOME</span></a>
+		<span class="right"><a >TTS Company 考勤与请假系统</a><a href="logout"><span>退出</span></a></span>
 	</div>
 
+	<header class="codrops-header">
+		<h1>添加新的部门<span>Add New Dept.</span></h1>
+	</header>
+</div>
+<div class="body_layer">
+	<form class="layui-form form_content">
+
+		<table class="layui-table">
+			<tr>
+				<td style="width: 100px">部门名称</td>
+				<td><input type="text" name="title" required
+						   lay-verify="required" autocomplete="off" class="layui-input deptName"></td>
+				<td style="width: 100px">部门主管</td>
+				<td><input type="text" name="title" required
+						   lay-verify="required" autocomplete="off" class="layui-input director"></td>
+			</tr>
+			<tr>
+				<td style="width: 100px">部门地址</td>
+				<td><input type="text" name="title" required
+						   lay-verify="required" autocomplete="off" class="layui-input address"></td>
+				<td style="width: 100px">部门电话</td>
+				<td><input type="text" name="title" required
+						   lay-verify="required" autocomplete="off" class="layui-input phone"></td>
+			</tr>
+			<tr>
+				<td>部门备注</td>
+				<td colspan="3">
+					<div class="layui-form-item layui-form-text">
+						<div class="layui-input-block" style="left: -8.8%; width: 100%;">
+							<textarea class="layui-textarea remark" lay-verify="required" required></textarea>
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4">
+					<button class="layui-btn layui-btn-normal sub_btn" lay-submit="" lay-filter="demo1">立即提交</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+</div>
+<div class="end_" style="margin-top: 15%; color: white;">
+	<ul class="pre_list">
+		<li>
+			<div class="svg">
+				<svg t="1606120825526" class="icon" viewBox="0 0 1027 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="12114" width="10" height="10"><path d="M512.275985 0.01003a511.699985 511.699985 0 0 0-63.962998 1019.36497 268.526992 268.526992 0 0 0 52.437998 4.61h17.863A511.699985 511.699985 0 0 0 512.275985 0.01003z m-80.673998 973.841971a469.057986 469.057986 0 0 1-388.383988-460.989986 451.193987 451.193987 0 0 1 10.371999-97.383997 49.555999 49.555999 0 0 0 79.520998-12.101c20.744999 12.677 48.979999 14.405 48.979999 39.759999 0 81.825998 0 169.413995 77.215997 172.870995a106.603997 106.603997 0 0 1 57.623999 63.386998c6.339 16.71 31.692999 0 57.623998 0 14.406 0 0 23.624999 0 74.909998S489.801986 882.230004 489.801986 882.230004a576.237983 576.237983 0 0 0 3.458 82.978998 172.870995 172.870995 0 0 0-61.657999 8.642999z m196.497995-7.489999c0-12.102-13.254-18.439999-32.269999-13.254 15.559-65.690998 23.049999-103.146997 57.623998-130.805996a43.793999 43.793999 0 0 0-29.963999-80.673998c-28.235999 4.61-10.373-34.573999-35.726999-36.878999s-57.623998-51.860998-93.926997-69.148998c-19.015999-8.643-37.454999-33.420999-66.843999-34.573999s-64.537998 22.472999-64.537998 4.61a1119.054967 1119.054967 0 0 0-6.914999-115.247996c0-13.253-8.644-4.61 26.506999-3.457 19.015999 0 9.796-38.607999 28.811999-40.336999s63.385998 17.863999 74.909998 9.796 74.911998 177.481995 74.911998 31.116999c0-17.286999-8.644-47.250999 0-63.961998a819.409976 819.409976 0 0 0 65.689998-124.467997 95.655997 95.655997 0 0 0-63.961998 0c-9.22 0 2.882 17.863999-10.372 20.745-50.132999 11.525-94.502997-13.254-78.943998-36.879999s73.181998-10.948 78.367998-57.622999c0-27.659999 5.186-57.623998 6.915-83.554997 67.419998 10.373 57.623998-87.587997-40.336999-97.959997A469.057986 469.057986 0 0 1 955.979972 359.006019a16.135 16.135 0 0 0-10.948-5.185999c-30.540999-76.062998-104.299997-20.744999-78.944997 45.522998-133.686996 103.145997-99.689997 172.870995-57.623999 216.089994a387.807989 387.807989 0 0 1 57.623999 77.214998c-15.558 45.522999 57.623998 27.082999 93.349997-50.132999a468.481986 468.481986 0 0 1-335.36999 324.421991z" p-id="12115" fill="#ffffff"></path></svg>
+			</div>
+		</li>
+		<li class="left-">
+			<div class="studio" style="font-size: 10px;">
+				TJU(中国)
+			</div>
+		</li>
+
+		<li class="right">
+			<div class="welcome"style="font-size: 10px;">
+				@Axel Studio 2020
+			</div>
+		</li>
+
+		<li class="right">
+			<div class="title"style="font-size: 10px;">
+				jefflee@gmail.com
+			</div>
+		</li>
+
+		<li class="right-">
+			<div class="svg">
+				<svg t="1606125110506" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="13064" width="15" height="15"><path d="M868.565333 213.333333H155.434667A27.264 27.264 0 0 0 128 240.469333v543.061334c0 15.018667 12.245333 27.136 27.434667 27.136h713.130666a27.264 27.264 0 0 0 27.434667-27.136V240.469333A27.264 27.264 0 0 0 868.565333 213.333333z m-34.261333 93.994667v442.24H189.696V307.328l-23.637333-18.218667 33.706666-42.837333 36.693334 28.245333H787.626667l36.693333-28.245333 33.664 42.837333-23.722667 18.218667z m-46.634667-32.896L512 486.528 236.373333 274.432l-36.693333-28.245333-33.706667 42.837333 23.637334 18.218667 292.821333 225.365333c17.322667 13.312 41.557333 13.312 58.88 0l292.992-225.28 23.637333-18.218667-33.706666-42.837333-36.565334 28.16z" fill="#F59223" p-id="13065"></path></svg>				</div>
+		</li>
+
+		<li class="right-">
+			<div class="title" style="margin-right: 10px; font-size: 10px;">
+				与Axel Studio联系
+			</div>
+		</li>
+
+	</ul>
+</div>
 </body>
 </html>

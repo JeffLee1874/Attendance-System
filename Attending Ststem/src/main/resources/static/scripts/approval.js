@@ -18,6 +18,7 @@ $(document).ready(function() {
 											elem : '#tt',
 											url : 'approval/approval.io',
 											height:410,
+											width:595,
 											response : {
 												statusName : 'state' // 规定数据状态的字段名称，默认：code
 												,

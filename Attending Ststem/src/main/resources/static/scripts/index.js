@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	$(".com").load("com");
-	
+
 	var data=initData();
 	var ctx = document.getElementById('MyChart1').getContext('2d');
 	var chart = new Chart(ctx, {
@@ -70,9 +70,9 @@ $(document).ready(function() {
 			aspectRatio : 1
 		}
 	});
-	
-	
-	
+
+
+
 	$("#link1").click(function(){
 		var url_base64 = document.getElementById("MyChart1").toDataURL("image/png");
         link1.href = url_base64;

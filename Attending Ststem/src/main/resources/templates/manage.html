@@ -1,130 +1,101 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
 	  xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width = device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = 0"/>
-	<title>请假申请</title>
-
+	<meta name="viewport"
+		  content="width = device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = 0" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>员工信息表</title>
+	<link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
-	<link rel="stylesheet" href="layui/css/layui.css" />
-	<link rel="stylesheet" href="styles/approval.css" />
+	<link rel="stylesheet" href="styles/jquery.mCustomScrollbar.css" />
+	<link rel="stylesheet" href="styles/jquery.mCustomScrollbar.min.css" />
+	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script type="text/javascript" src="scripts/mangage.js"></script>
 	<script type="text/javascript" src="scripts/jquery.min.js"></script>
-	<script type="text/javascript" src="scripts/approval.js"></script>
+	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+	<script src="scripts/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="scripts/jquery.mCustomScrollbar.js"></script>
 	<script src="layui/layui.js"></script>
+	<script type="text/javascript" src="scripts/queryDeptInfo.js"></script>
 
+	<script src="https://wow.techbrood.com/libs/jquery/jquery-1.11.1.min.js"></script>
+	<link rel="stylesheet" href="styles/manage.css" />
+	<link rel="stylesheet" href="styles/box.css" />
+	<link rel="stylesheet" href="styles/index.css" />
 </head>
-<body class="layui-layout-body">
+<body>
 <div class="container">
 	<div class="codrops-top clearfix">
 		<a href="index"><span>HOME</span></a>
 		<span class="right"><a >TTS Company 考勤与请假系统</a><a href="logout"><span>退出</span></a></span>
 	</div>
+
 	<header class="codrops-header">
-		<h1>申请您的假期<span>Apply for your vacation.</span></h1>
+		<h1>员工信息管理<span>查询或更改员工信息</span></h1>
 	</header>
-</div><!-- /container -->
 
-<div class="form_body">
-	<!-- form -->
-	<div class="layui-form">
+	<div class="toolbar"></div>
+	<div class="search bar8">
+		<form onsubmit="return false">
+			<input type="text" id='name' placeholder="请输入姓名，并使用回车键提交...">
+			<button type="submit" id='amnd'></button>
+		</form>
+	</div>
 
-		<div class="layui-form-item">
-			<label class="layui-form-label">请假类型</label>
-			<div class="layui-input-inline">
-				<select name="quiz1" lay-verify="required" id="leaveType">
-					<option value="">==请选择==</option>
-					<option value="事假">事假</option>
-					<option value="病假">病假</option>
-					<option value="婚假">婚假</option>
-					<option value="产假">产假</option>
-					<option value="陪产假">陪产假</option>
-					<option value="调休">调休</option>
-					<option value="其他">其他</option>
-				</select>
-			</div>
-		</div>
-		<hr class="bg1" />
-		<div class="startTime">
-			<div class="layui-inline">
-				<label class="layui-form-label">开始时间</label>
-				<div class="layui-input-inline">
-					<input type="text" class="layui-input" id="start"
-						   lay-verify="required" placeholder="yyyy-MM-dd HH:mm:ss" />
-				</div>
-			</div>
-		</div>
-		<hr class="bg2" />
-		<div class="endTime">
-			<div class="layui-inline">
-				<label class="layui-form-label">结束时间</label>
-				<div class="layui-input-inline">
-					<input type="text" class="layui-input" id="end"
-						   lay-verify="required" placeholder="yyyy-MM-dd HH:mm:ss" />
-				</div>
-			</div>
-		</div>
-		<hr class="bg3" />
-		<div class="times">
-			<div class="layui-form-item">
-				<label class="layui-form-label">请假天数</label>
-				<div class="layui-input-inline">
-					<input type="text" name="username" lay-verify="required" id="leaveNum"
-						   placeholder="请输入数字" autocomplete="off" class="layui-input" />
-				</div>
-			</div>
-		</div>
-		<hr class="bg4" />
-		<div class="leaveExcuse">
-			<div class="layui-form-item layui-form-text">
-				<label class="layui-form-label">请假事由</label>
-				<div class="layui-input-block">
-					<textarea placeholder="请输入内容" class="layui-textarea" id="leaveRegard" lay-verify="required"></textarea>
-				</div>
-			</div>
-		</div>
-		<div class="add">
-			<label class="layui-form-label">审批人:</label>
-			<div class="layui-btn-group">
-				<button type="button" class="layui-btn layui-btn-sm" id="add">
-					<i class="layui-icon">&#xe654;</i>
-				</button>
-			</div>
-			<ul class="ulList">
-
-			</ul>
-		</div>
-
-		<div class="layui-form-item btn_bg">
-			<div class="layui-input-block">
-				<button class="layui-btn layui-btn-normal sub_btn" lay-submit=""
-						lay-filter="submit_btn">立即提交</button>
-			</div>
-		</div>
+	<div class="add" onclick="window.open('addEmp')">
 	</div>
 </div>
-<!-- 背景模态化 -->
-<div class="opacity_bg" style='display: none'></div>
-<!-- 隐藏的添加审批人页面 -->
-<div class="show" hidden="hidden" style="background-color: white;">
-	<span id="leftTitle" style="color: black;">审批人</span>
-	<button class="layui-btn layui-btn-danger close" id="btnClose">
-		<i class="layui-icon ">&#x1006;</i>
-	</button>
-	<div class="showBody">
-		<div class="tab">
-			<table class="layui-hide" id="tt" lay-filter="demo">
+</div>
 
+
+<div class="body_content">
+	<div class="body_cude">
+		<!-- 显示表格信息 -->
+		<div class="showTab">
+			<table class="pure-table table_info" border="1" cellspacing="0">
+				<tr>
+					<th>#</th>
+					<th>姓名</th>
+					<th>性别</th>
+					<th>部门</th>
+					<th>编号</th>
+					<th>手机号码</th>
+					<th>邮箱</th>
+					<th>民族</th>
+					<th>出生日期</th>
+					<th>婚姻状况</th>
+					<th>政治面貌</th>
+					<th>身份证号</th>
+					<th>年龄</th>
+					<th>学历</th>
+					<th>专业</th>
+					<th>毕业院校</th>
+					<th>职位</th>
+					<th>现住地址</th>
+
+					<th shiro:hasPermission="/empManageAuthority">薪资</th>
+					<th shiro:hasPermission="/empManageAuthority">操作</th>
+				</tr>
 			</table>
 		</div>
 	</div>
-	<div class="layui-btn-group btnGroup">
-		<button class="layui-btn layui-btn-primary layui-btn-sm" data-type="getCheckData">确定</button>
-		<button class="layui-btn layui-btn-primary layui-btn-sm close" id="">取消</button>
-	</div>
 </div>
 
-<div class="end_" style="margin-left: 1%; margin-top: 12%; color: white;">
+<div id="page" style="display: inline-block; margin-left:45%; margin-top:1%; word-spacing: 4px;"></div>
+<div class="showCount" style="display: inline-block; margin-left:25%; margin-top:1%;">
+	<span id="countRed" style="word-spacing: 4px;"></span>
+</div>
+<!-- 背景模态化 -->
+<div class="opacity_bg" style='display: none'></div>
+<!-- 隐藏的确认删除框 -->
+<div class="sure_del" hidden="hidden">
+	<span id="info_del">是否确认删除该信息?</span>
+	<button type="button"
+			class="layui-btn layui-btn-normal close del_close">取消</button>
+	<button type="button" class="layui-btn layui-btn-normal del_sure">确认</button>
+</div>
+
+<div class="end_" style="margin-top: 10%;">
 	<ul class="pre_list">
 		<li>
 			<div class="svg">

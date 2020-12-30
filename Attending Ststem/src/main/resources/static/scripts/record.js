@@ -1,6 +1,5 @@
 var count = 0;
 $(document).ready(function() {
-	$(".com").load("com");
 	//点击检索信息
 	$("#sear_info").click(searchInfo);
 	//数据导出
